@@ -1,0 +1,663 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Samira Mozafari | Portfolio</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --cream: #f5f0e7;
+  --cream2: #e9dfd0;
+  --brown: #493327;
+  --dark: #302219;
+  --caramel: #a77b54;
+  --muted: #88796b;
+  --white: #fffaf2;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--cream);
+  color: var(--brown);
+  font-family: 'DM Sans', sans-serif;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+nav {
+  height: 85px;
+  padding: 0 8%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #ded3c4;
+}
+
+.logo {
+  font-family: 'Playfair Display', serif;
+  font-size: 25px;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+.logo span {
+  color: var(--caramel);
+}
+
+.nav-links {
+  display: flex;
+  gap: 35px;
+  list-style: none;
+  font-size: 13px;
+  color: var(--muted);
+}
+
+.nav-links a:hover {
+  color: var(--brown);
+}
+
+.hero {
+  min-height: 620px;
+  padding: 90px 10%;
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  align-items: center;
+  gap: 50px;
+}
+
+.eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  color: var(--caramel);
+  font-size: 11px;
+  font-weight: 700;
+  margin-bottom: 25px;
+}
+
+.hero h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(55px, 7vw, 88px);
+  line-height: 1.08;
+  font-weight: 500;
+  max-width: 650px;
+}
+
+.hero h1 em {
+  color: var(--caramel);
+  font-weight: 400;
+}
+
+.hero-description {
+  color: var(--muted);
+  font-size: 15px;
+  line-height: 1.9;
+  max-width: 420px;
+  margin-top: 25px;
+}
+
+.hero-button {
+  display: inline-block;
+  margin-top: 35px;
+  background: var(--brown);
+  color: var(--white);
+  padding: 15px 28px;
+  border-radius: 3px;
+  font-size: 12px;
+  letter-spacing: 1px;
+  transition: 0.3s;
+}
+
+.hero-button:hover {
+  background: var(--caramel);
+  transform: translateY(-3px);
+}
+
+/* Decorative shape */
+
+.art-area {
+  height: 430px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.arch {
+  width: 290px;
+  height: 370px;
+  background: var(--brown);
+  border-radius: 150px 150px 12px 12px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 20px 25px 0 var(--cream2);
+}
+
+.arch::before {
+  content: "";
+  position: absolute;
+  width: 250px;
+  height: 330px;
+  border: 1px solid #c5a889;
+  border-radius: 140px 140px 8px 8px;
+  top: 18px;
+  left: 19px;
+}
+
+.arch-letter {
+  font-family: 'Playfair Display', serif;
+  font-size: 170px;
+  color: var(--cream);
+  font-style: italic;
+  z-index: 2;
+  transform: translateY(-5px);
+}
+
+.small-circle {
+  position: absolute;
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  background: var(--caramel);
+  top: 45px;
+  right: 12%;
+  z-index: 3;
+}
+
+.small-circle.two {
+  width: 25px;
+  height: 25px;
+  background: var(--cream2);
+  border: 1px solid var(--caramel);
+  top: auto;
+  right: auto;
+  bottom: 50px;
+  left: 8%;
+}
+
+.shape-dot {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background: var(--caramel);
+  border-radius: 50%;
+  bottom: 75px;
+  right: 13%;
+}
+
+/* General sections */
+
+section {
+  padding: 100px 10%;
+}
+
+.section-label {
+  color: var(--caramel);
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  font-weight: 700;
+  margin-bottom: 17px;
+}
+
+.section-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(38px, 5vw, 55px);
+  font-weight: 500;
+  margin-bottom: 35px;
+}
+
+.about {
+  background: var(--white);
+}
+
+.about-content {
+  max-width: 760px;
+  color: var(--muted);
+  font-size: 16px;
+  line-height: 2.1;
+}
+
+.about-content strong {
+  color: var(--brown);
+  font-weight: 600;
+}
+
+/* Books */
+
+.books {
+  background: var(--cream);
+}
+
+.books-intro {
+  color: var(--muted);
+  line-height: 1.8;
+  max-width: 480px;
+  margin-top: -18px;
+  margin-bottom: 45px;
+}
+
+.book-list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+}
+
+.book-item {
+  min-height: 245px;
+  padding: 30px 25px;
+  background: var(--white);
+  border-radius: 3px;
+  position: relative;
+  overflow: hidden;
+  transition: 0.35s;
+}
+
+.book-item:hover {
+  transform: translateY(-8px);
+  background: var(--brown);
+  color: var(--cream);
+}
+
+.book-number {
+  font-family: 'Playfair Display', serif;
+  font-size: 43px;
+  color: var(--caramel);
+  opacity: 0.8;
+}
+
+.book-item h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 27px;
+  font-weight: 500;
+  margin-top: 38px;
+  line-height: 1.3;
+}
+
+.book-item p {
+  font-size: 11px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-top: 13px;
+  color: var(--muted);
+}
+
+.book-item:hover p {
+  color: #d5b99c;
+}
+
+/* Skills */
+
+.skills {
+  background: var(--brown);
+  color: var(--cream);
+}
+
+.skills .section-label {
+  color: #c39a73;
+}
+
+.skills .section-title {
+  color: var(--cream);
+}
+
+.skills-intro {
+  color: #c7b7a6;
+  line-height: 1.8;
+  max-width: 450px;
+  margin-top: -15px;
+  margin-bottom: 45px;
+}
+
+.skill-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 15px;
+}
+
+.skill-card {
+  min-height: 170px;
+  padding: 25px 20px;
+  border: 1px solid #705747;
+  border-radius: 3px 35px 3px 3px;
+  transition: 0.3s;
+}
+
+.skill-card:hover {
+  background: #5a4030;
+  transform: translateY(-5px);
+}
+
+.skill-card span {
+  color: #c39a73;
+  font-family: 'Playfair Display', serif;
+  font-size: 30px;
+}
+
+.skill-card h3 {
+  font-size: 15px;
+  margin-top: 25px;
+  font-weight: 500;
+}
+
+.skill-card p {
+  font-size: 12px;
+  color: #c7b7a6;
+  margin-top: 9px;
+  line-height: 1.6;
+}
+
+/* Journey */
+
+.journey {
+  background: var(--cream2);
+  text-align: center;
+}
+
+.journey h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(35px, 5vw, 55px);
+  font-weight: 500;
+  max-width: 720px;
+  margin: auto;
+  line-height: 1.3;
+}
+
+.journey h2 em {
+  color: var(--caramel);
+}
+
+.journey p {
+  max-width: 550px;
+  margin: 25px auto 0;
+  color: var(--muted);
+  line-height: 1.9;
+  font-size: 14px;
+}
+
+/* Contact */
+
+.contact {
+  background: var(--white);
+  text-align: center;
+}
+
+.contact .section-title {
+  margin-bottom: 15px;
+}
+
+.contact-text {
+  color: var(--muted);
+  line-height: 1.8;
+  margin-bottom: 30px;
+}
+
+.contact-link {
+  display: inline-block;
+  padding: 14px 30px;
+  background: var(--brown);
+  color: var(--white);
+  font-size: 12px;
+  letter-spacing: 1px;
+  transition: 0.3s;
+}
+
+.contact-link:hover {
+  background: var(--caramel);
+}
+
+footer {
+  background: var(--dark);
+  color: #c7b7a6;
+  text-align: center;
+  padding: 25px 15px;
+  font-size: 11px;
+  letter-spacing: 1px;
+}
+
+/* Responsive */
+
+@media(max-width: 850px) {
+  .hero {
+    grid-template-columns: 1fr;
+    padding-top: 70px;
+  }
+
+  .art-area {
+    height: 390px;
+  }
+
+  .book-list {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .skill-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media(max-width: 550px) {
+  nav {
+    padding: 0 6%;
+  }
+
+  .nav-links {
+    gap: 13px;
+    font-size: 10px;
+  }
+
+  .logo {
+    font-size: 20px;
+  }
+
+  .hero {
+    padding: 65px 7%;
+  }
+
+  .arch {
+    width: 240px;
+    height: 320px;
+  }
+
+  .arch::before {
+    width: 205px;
+    height: 280px;
+  }
+
+  .arch-letter {
+    font-size: 140px;
+  }
+
+  section {
+    padding: 75px 7%;
+  }
+
+  .book-list {
+    grid-template-columns: 1fr;
+  }
+
+  .skill-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .skill-card {
+    padding: 18px 14px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+  <a href="#" class="logo">Samira<span>.</span></a>
+
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#books">Books</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<header class="hero">
+  <div>
+    <p class="eyebrow">Writer · Creative Mind · Learner</p>
+
+    <h1>Stories make us <em>human.</em></h1>
+
+    <p class="hero-description">
+      I am Samira Mozafari, a writer and creative learner who believes
+      every story has a voice and every dream deserves a chance.
+    </p>
+
+    <a href="#books" class="hero-button">EXPLORE MY WORK</a>
+  </div>
+
+  <div class="art-area">
+    <div class="arch">
+      <span class="arch-letter">S</span>
+    </div>
+    <div class="small-circle"></div>
+    <div class="small-circle two"></div>
+    <div class="shape-dot"></div>
+  </div>
+</header>
+
+<section class="about" id="about">
+  <p class="section-label">A little about me</p>
+  <h2 class="section-title">Who I Am</h2>
+
+  <div class="about-content">
+    <p>
+      My name is <strong>Samira Mozafari</strong>. I am a writer from
+      <strong>Mazar-i-Sharif, Afghanistan</strong>. Writing is one of
+      the most meaningful parts of my life. I enjoy creating stories,
+      expressing ideas, and giving words a voice.
+    </p>
+    <p>
+      Alongside writing, I am learning computer skills, coding,
+      JavaScript, and English. I believe learning is a journey that
+      never truly ends, and I want to keep growing through creativity
+      and knowledge.
+    </p>
+  </div>
+</section>
+
+<section class="books" id="books">
+  <p class="section-label">My creative world</p>
+  <h2 class="section-title">Books & Stories</h2>
+
+  <p class="books-intro">
+    Every book carries a different world, a different feeling,
+    and a story waiting to be discovered.
+  </p>
+
+  <div class="book-list">
+
+    <div class="book-item">
+      <span class="book-number">01</span>
+      <h3>Gandom</h3>
+      <p>A story of courage and hope</p>
+    </div>
+
+    <div class="book-item">
+      <span class="book-number">02</span>
+      <h3>Maryam</h3>
+      <p>A world of thoughts and feelings</p>
+    </div>
+
+    <div class="book-item">
+      <span class="book-number">03</span>
+      <h3>Are We Not Human?</h3>
+      <p>A story about humanity</p>
+    </div>
+
+  </div>
+</section>
+
+<section class="skills" id="skills">
+  <p class="section-label">What I am learning</p>
+  <h2 class="section-title">My Skills</h2>
+
+  <p class="skills-intro">
+    I am always exploring new skills and discovering new ways
+    to express my ideas.
+  </p>
+
+  <div class="skill-grid">
+
+    <div class="skill-card">
+      <span>01</span>
+      <h3>Creative Writing</h3>
+      <p>Creating stories and expressing ideas through words.</p>
+    </div>
+
+    <div class="skill-card">
+      <span>02</span>
+      <h3>HTML & CSS</h3>
+      <p>Building and designing beautiful web pages.</p>
+    </div>
+
+    <div class="skill-card">
+      <span>03</span>
+      <h3>JavaScript</h3>
+      <p>Learning programming and interactive web experiences.</p>
+    </div>
+
+    <div class="skill-card">
+      <span>04</span>
+      <h3>English</h3>
+      <p>Improving communication and language skills.</p>
+    </div>
+
+  </div>
+</section>
+
+<section class="journey">
+  <p class="section-label">My philosophy</p>
+
+  <h2>
+    Every new skill begins with a little <em>curiosity.</em>
+  </h2>
+
+  <p>
+    I believe in the power of learning, the beauty of creativity,
+    and the courage to begin again. My journey is still growing,
+    and every step is part of my story.
+  </p>
+</section>
+
+<section class="contact" id="contact">
+  <p class="section-label">Let's connect</p>
+  <h2 class="section-title">Get In Touch</h2>
+
+  <p class="contact-text">
+    Thank you for visiting my little creative space.
+    I would love to connect and share ideas.
+  </p>
+
+  <a href="mailto:" class="contact-link">CONTACT ME</a>
+</section>
+
+<footer>
+  © 2026 SAMIRA MOZAFARI · MADE WITH CREATIVITY
+</footer>
+
+</body>
+</html>
